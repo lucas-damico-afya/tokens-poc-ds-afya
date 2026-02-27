@@ -1,0 +1,16 @@
+name: Notify consumers
+
+on:
+  push:
+    paths: ['tokens.json']  
+    
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger poc-ds-afya sync
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CONSUMER_REPO_TOKEN }}
+          repository: YOUR_ORG/poc-ds-afya
+          event-type: tokens-updated
