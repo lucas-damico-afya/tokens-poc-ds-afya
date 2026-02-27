@@ -12,5 +12,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.CONSUMER_REPO_TOKEN }}
-          repository: YOUR_ORG/poc-ds-afya
+          repository: lucas-damico-afya/poc-ds-afya
           event-type: tokens-updated
